@@ -29,7 +29,6 @@ export class ActionButtonComponent implements OnInit {
   cancelAlert(){
     this.clickCounter = 0;
     this.message = "Alert Canceled";
-    this.ngOnInit();
   }
 
   // geoCoordinates(position) {
