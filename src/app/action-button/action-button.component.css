@@ -8,12 +8,15 @@
 }
 
 #cancel-button{
+    border-radius: 10%;
     display: block;
     height: 40px;
     width: auto;
     background: yellow;
     font-size: auto;
+    align-content: center;
     justify-items: center;
+    margin-left: 100px;
 }
 
 #googlemap{

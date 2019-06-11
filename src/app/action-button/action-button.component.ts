@@ -1,4 +1,5 @@
 import { Component, OnInit, ɵɵNgOnChangesFeature } from '@angular/core';
+import { ApikeyComponent } from '../apikey/apikey.component';
 
 @Component({
   selector: 'app-action-button',
@@ -64,17 +65,20 @@ export class ActionButtonComponent implements OnInit {
     }
 
     function showPosition(position) {
-      // this.latitude = position.coords.latitude;
-      x.innerHTML = '<iframe id="googlemap" width="300" height="300" frameborder="0" style="border:0" src="https://maps.googleapis.com/maps/api/staticmap?center=${position.coords.latitude},${position.coords.longitutde}&zoom=12&size=400x400&markers=color:red&key=AIzaSyA6LiJWVhYo5QCjlcKDZMEJHjmIZG8hVE8" allowfullscreen></iframe>';
-      // x.innerHTML = "Latitude: " + position.coords.latitude +
-      //   "<br>Longitude: " + position.coords.longitude;     
+      const key = ApikeyComponent.apiKey();
+      console.log(key);
+// With API bootstrapped      
+      x.innerHTML = '<iframe id="googlemap" width="300" height="300" frameborder="0" style="border:0" src="https://maps.googleapis.com/maps/api/staticmap?center=${position.coords.latitude},${position.coords.longitutde}&zoom=12&size=400x400&markers=color:red&key={{key}}" allowfullscreen></iframe>';
+      
+// With API declared
+      // x.innerHTML = '<iframe id="googlemap" width="300" height="300" frameborder="0" style="border:0" src="https://maps.googleapis.com/maps/api/staticmap?center=${position.coords.latitude},${position.coords.longitutde}&zoom=12&size=400x400&markers=color:red&key=AIzaSyA6LiJWVhYo5QCjlcKDZMEJHjmIZG8hVE8" allowfullscreen></iframe>';
     }
   }
 
   getBatteryLevel() {
     navigator.getBattery().then(function(battery) {
       console.log(battery.level);
-      document.getElementById("battery").innerHTML = battery.level;
+      document.getElementById("battery").innerHTML = 'Battery-Level: ' + battery.level;
       battery.addEventListener('levelchange', function() {
         console.log(this.level);
       });

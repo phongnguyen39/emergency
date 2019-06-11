@@ -1,8 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 html{
-    background: linear-gradient(black, rgb(43, 43, 43), black);
+    background: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/rp0jiOD-inswuwfs/lighthouse-beacon-black-sea-send-light-beam-night-turning-lights_bboie88de_thumbnail-full01.png);
+    /* background: linear-gradient(black, rgb(43, 43, 43), black); */
     background-size: cover;
     background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+}
+body{
     height: 100vh;
     width: 100vw;
 }
@@ -18,6 +23,7 @@ h1, h2, h3, p{
     grid-template-rows: auto;
     justify-items: center;
 }
+
 
 #googlemap {
 }
