@@ -12,6 +12,7 @@ export class ActionButtonComponent implements OnInit {
   latitude: number;
   longtitude: number;
   status: any;
+  batteryLevel: number;
 
   constructor() { }
 
@@ -42,13 +43,13 @@ export class ActionButtonComponent implements OnInit {
     console.log("alert activated")
     this.statusUpdate();
     this.getLocation();
+    this.getBatteryLevel();
   }
 
   statusUpdate(){
     this.status = 'Unsafe';
     console.log("status changed")
   }
-
 
   getLocation() {
     // if(this.clickCounter < 5) {
@@ -68,7 +69,16 @@ export class ActionButtonComponent implements OnInit {
       // x.innerHTML = "Latitude: " + position.coords.latitude +
       //   "<br>Longitude: " + position.coords.longitude;     
     }
+  }
 
+  getBatteryLevel() {
+    navigator.getBattery().then(function(battery) {
+      console.log(battery.level);
+      document.getElementById("battery").innerHTML = battery.level;
+      battery.addEventListener('levelchange', function() {
+        console.log(this.level);
+      });
+    });
   }
 }
 
