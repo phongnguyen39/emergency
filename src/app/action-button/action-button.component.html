@@ -1,14 +1,11 @@
-<button id="action-button" (click)="counter()">
+<button id="action-button" (click)="counter()" >
   <h1>{{clickCounter}}</h1>
 </button>
-<button id="cancel-button" *ngIf="clickCounter>=5;" (click)="cancelAlert()">Cancel Alert</button>
-<div *ngIf="clickCounter>=5">
-
-  <iframe id="googlemap" width="300" height="300" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ9T_5iuTKj4ARe3GfygqMnbk&key=AIzaSyA6LiJWVhYo5QCjlcKDZMEJHjmIZG8hVE8"
-    allowfullscreen></iframe>
+<button id="cancel-button" *ngIf="clickCounter>=5" (click)="cancelAlert()">Cancel Alert</button>
+<div>
+    <div id="coordinates"></div>
 </div>
-
-<h1>{{coordinates}}</h1>
 <h1>{{message}}</h1>
+<!-- <h1>Status: {{status}}</h1> -->
 
-<p id="demo"></p>
+

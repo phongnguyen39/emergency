@@ -9,20 +9,27 @@ export class ActionButtonComponent implements OnInit {
   clickCounter: any;
   coordinates: any;
   message: string;
+  latitude: number;
+  longtitude: number;
+  status: any;
 
   constructor() { }
 
   ngOnInit() {
     this.clickCounter = 0;
     // this.coordinates = 0;
-    this.message = '';
+    // this.message = '';
+    // this.latitude;
+    // this.longtitude;
+    this.status = 'Safe';
+    console.log(this.status);
   }
 
   counter() {
     this.clickCounter += 1;
-    if (this.clickCounter == 5) {
-      console.log(this.clickCounter);
-      console.log("1" + this.coordinates);
+    console.log(this.clickCounter);
+    if(this.clickCounter>=5){
+      this.activateAlert();
     }
   }
 
@@ -31,33 +38,24 @@ export class ActionButtonComponent implements OnInit {
     this.message = "Alert Canceled";
   }
 
-  // geoCoordinates(position) {
-  //   console.log("geoCoordinates worked")
-  //   console.log("2"+navigator.geolocation);
-  //   console.log(Object.values(navigator.geolocation));
-  //   if (navigator.geolocation != null) {
-  //     this.coordinates = position.coords.latitude + ' ' + position.coords.longitude;
-  //     console.log(this.coordinates);
-  //     console.log(navigator.geolocation.getCurrentPosition(position));
-  //   } else {
-  //     console.log("snazzy")
-  //     this.coordinates = "Geolocation is not supported by this browser.";
-  //   }
+  activateAlert(){
+    console.log("alert activated")
+    this.statusUpdate();
+    this.getLocation();
+  }
 
-  //   function showPosition(position) {
-  //     console.log('showPosition called');
-  //     this.coordinates = "Latitude: " + position.coords.latitude + 
-  //     "<br>Longitude: " + position.coords.longitude; 
-  //     console.log(coordinates);
-  //   }
-  // }
+  statusUpdate(){
+    this.status = 'Unsafe';
+    console.log("status changed")
+  }
 
 
   getLocation() {
-    var x = document.getElementById("demo");
-
-    alert("foo")
-    console.log("methodcalled")
+    // if(this.clickCounter < 5) {
+    //   return;
+    // }
+    console.log("location activated")
+    var x = document.getElementById("coordinates");
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
     } else {
@@ -65,8 +63,10 @@ export class ActionButtonComponent implements OnInit {
     }
 
     function showPosition(position) {
-      x.innerHTML = "Latitude: " + position.coords.latitude +
-        "<br>Longitude: " + position.coords.longitude;
+      // this.latitude = position.coords.latitude;
+      x.innerHTML = '<iframe id="googlemap" width="300" height="300" frameborder="0" style="border:0" src="https://maps.googleapis.com/maps/api/staticmap?center=${position.coords.latitude},${position.coords.longitutde}&zoom=12&size=400x400&markers=color:red&key=AIzaSyA6LiJWVhYo5QCjlcKDZMEJHjmIZG8hVE8" allowfullscreen></iframe>';
+      // x.innerHTML = "Latitude: " + position.coords.latitude +
+      //   "<br>Longitude: " + position.coords.longitude;     
     }
 
   }
