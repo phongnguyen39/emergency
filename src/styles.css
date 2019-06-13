@@ -27,3 +27,9 @@ h1, h2, h3, p{
 
 #googlemap {
 }
+
+#statusPane{
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}

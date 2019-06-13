@@ -1,13 +1,16 @@
-<button id="action-button" (click)="counter()" >
-  <h1>{{clickCounter}}</h1>
-</button>
+<div id="action-button-border">
+  <button id="action-button" (click)="counter()">
+    <h1 id="float_char">{{clickCounter}}</h1>
+  </button>
+</div>
 <button id="cancel-button" *ngIf="clickCounter>=5" (click)="cancelAlert()">Cancel Alert</button>
 <div>
-    <div id="coordinates"></div>
+  <div id="coordinates"></div>
 </div>
-<h1 id="battery"></h1>
-<h1>{{message}}</h1>
+<div id="statusPane">
+  <h1 id="battery"></h1>
+  <h1>{{message}}</h1>
+  <h1 id="deviceOn"></h1>
+</div>
 
 <!-- <h1>Status: {{status}}</h1> -->
-
-

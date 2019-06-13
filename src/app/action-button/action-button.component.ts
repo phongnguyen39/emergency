@@ -11,7 +11,7 @@ export class ActionButtonComponent implements OnInit {
   coordinates: any;
   message: string;
   latitude: number;
-  longtitude: number;
+  longitude: number;
   status: any;
   batteryLevel: number;
 
@@ -22,7 +22,7 @@ export class ActionButtonComponent implements OnInit {
     // this.coordinates = 0;
     // this.message = '';
     // this.latitude;
-    // this.longtitude;
+    // this.longitude;
     this.status = 'Safe';
     console.log(this.status);
   }
@@ -45,6 +45,7 @@ export class ActionButtonComponent implements OnInit {
     this.statusUpdate();
     this.getLocation();
     this.getBatteryLevel();
+    this.deviceOn();
   }
 
   statusUpdate(){
@@ -65,24 +66,43 @@ export class ActionButtonComponent implements OnInit {
     }
 
     function showPosition(position) {
-      const key = ApikeyComponent.apiKey();
-      console.log(key);
+      console.log("Lat:  "+position.coords.latitude+" Long: "+ position.coords.longitude);
+      // const key = ApikeyComponent.apiKey();
+      // console.log(key);
 // With API bootstrapped      
-      x.innerHTML = '<iframe id="googlemap" width="300" height="300" frameborder="0" style="border:0" src="https://maps.googleapis.com/maps/api/staticmap?center=${position.coords.latitude},${position.coords.longitutde}&zoom=12&size=400x400&markers=color:red&key={{key}}" allowfullscreen></iframe>';
+      // x.innerHTML = '<iframe id="googlemap" width="300" height="300" frameborder="0" style="border:0" src="https://maps.googleapis.com/maps/api/staticmap?center=${position.coords.latitude},${position.coords.longitude}&zoom=12&size=400x400&markers=color:red&key={{key}}" allowfullscreen></iframe>';
       
 // With API declared
-      // x.innerHTML = '<iframe id="googlemap" width="300" height="300" frameborder="0" style="border:0" src="https://maps.googleapis.com/maps/api/staticmap?center=${position.coords.latitude},${position.coords.longitutde}&zoom=12&size=400x400&markers=color:red&key=AIzaSyA6LiJWVhYo5QCjlcKDZMEJHjmIZG8hVE8" allowfullscreen></iframe>';
+      // x.innerHTML = '<iframe id="googlemap" width="300" height="300" frameborder="0" style="border:0" src="https://maps.googleapis.com/maps/api/staticmap?center=${position.coords.latitude},${position.coords.longitude}&zoom=12&size=400x400&markers=color:red&key=AIzaSyA6LiJWVhYo5QCjlcKDZMEJHjmIZG8hVE8" allowfullscreen></iframe>';
+
+    // different interpolation
+
+    x.innerHTML = 
+    '<iframe id = "googlemap" width = "300" height = "300" frameborder="0" style = "border: 0" src = "https://maps.googleapis.com/maps/api/staticmap?center=' + 
+    position.coords.latitude + ','+ position.coords.longitude + 
+    '&zoom=12&size=400x400&key=AIzaSyA6LiJWVhYo5QCjlcKDZMEJHjmIZG8hVE8" allowfullscreen></iframe>';
+    }
+  }
+
+  deviceOn(){
+    console.log("Device Status"+navigator.onLine);
+    if(navigator.onLine){
+      document.getElementById("deviceOn").innerHTML="Device is on";
+    } else {
+      document.getElementById("deviceON").innerHTML="Device is off";
     }
   }
 
   getBatteryLevel() {
-    navigator.getBattery().then(function(battery) {
-      console.log(battery.level);
-      document.getElementById("battery").innerHTML = 'Battery-Level: ' + battery.level;
-      battery.addEventListener('levelchange', function() {
-        console.log(this.level);
-      });
-    });
+    
+    // navigator.battery
+    // navigator.getBattery().then(function(battery) {
+    //   console.log(battery.level);
+    //   document.getElementById("battery").innerHTML = 'Battery-Level: ' + battery.level;
+    //   battery.addEventListener('levelchange', function() {
+    //     console.log(this.level);
+    //   });
+    // });
   }
 }
 
