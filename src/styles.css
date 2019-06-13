@@ -18,7 +18,7 @@ h1, h2, h3, p{
 }
 
 .container{
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     display: grid;
     grid-template-rows: auto;
     justify-items: center;
