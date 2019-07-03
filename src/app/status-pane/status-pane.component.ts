@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./status-pane.component.css']
 })
 export class StatusPaneComponent implements OnInit {
-
+  message: string;
   constructor() { }
 
   ngOnInit() {

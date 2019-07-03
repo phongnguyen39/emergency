@@ -1,9 +1,21 @@
-
-#app-container{
-    display: block;
-    justify-content: center;
-    /* grid-template-columns: 100% 100%; */
-    width: 100%;
-    height: 100%;
+@media only screen and (max-width: 4000px){
+    #app-container{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 100% 100%;
+        width: 100%;
+        height: 100%;
+    }
 }
+
+@media only screen and (max-width: 600px){
+    #app-container{
+        display: block;
+        justify-content: center;
+        grid-template-columns: 100% 100%;
+        width: 100%;
+        height: 100%;
+    }
+}
+
 
