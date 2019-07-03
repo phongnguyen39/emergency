@@ -1,28 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
-html{
+@media only screen and (max-width: 4000px) {
+    html{
 
+    }
+    body{
+        background: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/rp0jiOD-inswuwfs/lighthouse-beacon-black-sea-send-light-beam-night-turning-lights_bboie88de_thumbnail-full01.png);
+        /* background: linear-gradient(black, rgb(43, 43, 43), black); */
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    h1, h2, h3, p{
+        color: white;
+        text-align: center;
+    }
+    
+    .container{
+        /* border: 1px solid gray; */
+        display: grid;
+        grid-template-rows: auto;
+        justify-items: center;
+        width: 99vw;
+    }
+    
+    
+    #googlemap {
+    }
 }
-body{
-    background: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/rp0jiOD-inswuwfs/lighthouse-beacon-black-sea-send-light-beam-night-turning-lights_bboie88de_thumbnail-full01.png);
-    /* background: linear-gradient(black, rgb(43, 43, 43), black); */
-    background-size: cover;
-    background-repeat: no-repeat;
-}
 
-h1, h2, h3, p{
-    color: white;
-    text-align: center;
-}
+@media only screen and (max-width: 600px) {
+    html{
 
-.container{
-    /* border: 1px solid gray; */
-    display: grid;
-    grid-template-rows: auto;
-    justify-items: center;
-    width: 99vw;
-}
+    }
+    body{
+        background: url(https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/rp0jiOD-inswuwfs/lighthouse-beacon-black-sea-send-light-beam-night-turning-lights_bboie88de_thumbnail-full01.png);
+        /* background: linear-gradient(black, rgb(43, 43, 43), black); */
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    h1, h2, h3, p{
+        color: white;
+        text-align: center;
+    }
+
+    .container{
+        /* border: 1px solid gray; */
+        display: grid;
+        grid-template-rows: auto;
+        justify-items: center;
+        width: 99vw;
+    }
 
 
-#googlemap {
+    #googlemap {
+    }
 }
 
