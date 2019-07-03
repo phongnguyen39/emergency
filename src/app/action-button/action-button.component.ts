@@ -24,7 +24,7 @@ export class ActionButtonComponent implements OnInit {
     // this.latitude;
     // this.longitude;
     this.status = 'Safe';
-    console.log(this.status);
+    this.deviceOn();
   }
 
   counter() {
@@ -87,9 +87,9 @@ export class ActionButtonComponent implements OnInit {
   deviceOn(){
     console.log("Device Status"+navigator.onLine);
     if(navigator.onLine){
-      document.getElementById("deviceOn").innerHTML="Device is on";
+      document.getElementById("deviceOn").innerHTML="On";
     } else {
-      document.getElementById("deviceON").innerHTML="Device is off";
+      document.getElementById("deviceON").innerHTML="Off";
     }
   }
 
