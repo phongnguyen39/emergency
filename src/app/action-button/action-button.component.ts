@@ -40,6 +40,8 @@ export class ActionButtonComponent implements OnInit {
   cancelAlert() {
     this.clickCounter = 0;
     this.message = 'Alert Canceled';
+    this.status = 'Safe';
+    document.getElementById('alertMode').innerHTML = 'Mode | ' + this.status;
   }
 
   activateAlert() {
