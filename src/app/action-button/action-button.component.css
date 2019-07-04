@@ -1,10 +1,12 @@
 #action-button{
+    display: grid;
     border-radius: 100%;
     width: 5em;
     background: radial-gradient(rgb(255, 100, 0), red);
     box-shadow: 10px 10px 10px black;
     font-size: 350%;
     z-index: 10;    
+    justify-content: center;
 }
 
 
@@ -58,15 +60,15 @@
 }
 
 #cancel-button{
+    display: grid;
     border-radius: 10%;
-    display: block;
     height: 40px;
     width: auto;
     background: yellow;
     font-size: auto;
-    align-content: center;
-    justify-items: center;
-    margin-left: 100px;
+    /* align-content: center; */
+    justify-content: center;
+    /* margin-left: 100px; */
 }
 
 #googlemap{

@@ -4,4 +4,10 @@
     background: rgba(128, 128, 128, 0.383);
     box-shadow: 10px 10px 10px black;
     width: 100%;
+    padding: 1%;
+}
+
+#coordinates{
+    display: grid;
+    justify-content: center;
 }
