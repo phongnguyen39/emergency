@@ -1,12 +1,11 @@
-<div id="action-button-border">
-  <button id="action-button" (click)="counter()">
-    <h1 id="float_char">{{clickCounter}}</h1>
-  </button>
-</div>
-<button id="cancel-button" *ngIf="clickCounter>=5" (click)="cancelAlert()">Cancel Alert</button>
-
+<div id = "button-container">
   
+  <div id="action-button-border">
+    <button id="action-button" (click)="counter()">
+      <h1 id="float_char">{{clickCounter}}</h1>
+    </button>
+  </div>
 
+  <button id="cancel-button" *ngIf="clickCounter>=5" (click)="cancelAlert()">Cancel Alert</button>
 
-
-<!-- <h1>Status: {{status}}</h1> -->
+</div>
