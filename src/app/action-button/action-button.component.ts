@@ -24,6 +24,7 @@ export class ActionButtonComponent implements OnInit {
     // this.latitude;
     // this.longitude;
     this.status = 'Safe';
+    document.getElementById('alertMode').innerHTML = 'Mode | ' + this.status;
     this.deviceOn();
     this.getLocation();
   }
@@ -51,18 +52,20 @@ export class ActionButtonComponent implements OnInit {
 
   statusUpdate() {
     this.status = 'Unsafe';
-    console.log('status changed')
+    console.log('status changed');
+    document.getElementById('alertMode').innerHTML = 'Mode | ' + this.status;
   }
 
   getLocation() {
     // if(this.clickCounter < 5) {
     //   return;
     // }
-    console.log('location activated')
+    console.log('location activated');
     var x = document.getElementById('coordinates');
+
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
+    }  else {
       x.innerHTML = 'Geolocation is not supported by this browser.';
     }
 
@@ -84,9 +87,9 @@ export class ActionButtonComponent implements OnInit {
   deviceOn() {
     console.log('Device Status | ' + navigator.onLine);
     if (navigator.onLine) {
-      document.getElementById('deviceOn').innerHTML = 'Device Status | On';
+      document.getElementById('deviceOn').innerHTML = 'Device | On';
     } else {
-      document.getElementById('deviceON').innerHTML = 'Device Status | Off';
+      document.getElementById('deviceON').innerHTML = 'Device | Off';
     }
   }
 

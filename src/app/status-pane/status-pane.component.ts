@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActionButtonComponent } from './action-button/action-button.component';
 
 @Component({
   selector: 'app-status-pane',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./status-pane.component.css']
 })
 export class StatusPaneComponent implements OnInit {
-  message: string;
+
   constructor() { }
 
   ngOnInit() {
