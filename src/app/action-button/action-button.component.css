@@ -12,6 +12,7 @@
     font-size: 350%;
     z-index: 10;    
     justify-content: center;
+    margin: 0 auto;
 }
 
 
@@ -73,6 +74,7 @@
     font-size: auto;
     /* align-content: center; */
     justify-items: center;
+    margin: 0 auto;
 }
 
 #googlemap{
